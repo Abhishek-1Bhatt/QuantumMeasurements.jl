@@ -19,7 +19,7 @@ ket = abs.(x.data)
 
 #probabilites, state
 probs = measure_state_probs(params)(ket)
-state_meas = measure_state(measure_state_probs(params), ket)
+state_meas = measure_state(measure_state_probs(params), ket) # or call state(params, ket) directly as below
 state_meas = state(params, ket)
 
 #overlap 
@@ -36,3 +36,4 @@ derivative = mean(samples) #d𝔼[state]/dparams
 overlap, dEst_dp = measure(x)
 overlap, dEst_dp = measure(x, rand(length(basis)), 400)
 ```
+Note that the `measure(x)` function can handle the ket `x` passed directly. For all the other functions above, the ket should be Vector{Float64} as in `ket`
