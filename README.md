@@ -1,5 +1,5 @@
 # QuantumMeasurements.jl
-Here I try to demonstrate the stochastic differentiation of the expected state of a ket with respect to some parameters of the measurement operator, i.e.,
+Here, I try to demonstrate the stochastic differentiation of the expected state of a ket with respect to some parameters of the measurement operator, i.e.,
 
     d𝔼[state]/dparams
 
