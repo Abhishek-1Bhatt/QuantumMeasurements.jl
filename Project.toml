@@ -1,0 +1,10 @@
+name = "QuantumMeasurements"
+uuid = "9d220d63-0c3d-4939-ad4d-ca255902a3eb"
+authors = ["Abhishek Bhatt <abhishekbhatt730@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+QuantumOptics = "6e0679c1-51ea-5a7c-ac74-d61b76210b0c"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
+StochasticAD = "e4facb34-4f7e-4bec-b153-e122c37934ac"
