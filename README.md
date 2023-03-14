@@ -3,7 +3,7 @@ Here, I try to demonstrate the stochastic differentiation of the expected state 
 
     d𝔼[state]/dparams
 
-This has been implemented with the help of StochasticAD.jl. Since, StochasticAD does not support differentiation of functions with intermediate values which are not `<:Real`, the ket states used for this demo can only be `Float64` rather than `ComplexF64`. This is the case by default with QuantumOptics.jl kets where the imaginary part is zero by default.
+This has been implemented with the help of StochasticAD.jl. Since, StochasticAD does not support differentiation of functions with intermediate values which are not `<:Real`, the ket states used for this demo can only be `Vector{Float64}` rather than `Vector{ComplexF64}`. This is the case by default with QuantumOptics.jl kets where the imaginary part is zero by default. Hence, calling `abs.(ket.data)` gives the same data in `Vector{Float64} form.
 
 ## Demo
 
@@ -32,7 +32,7 @@ derivative_estimate(p -> state(p, ket), params)
 samples = [derivative_estimate(p -> state(p, ket), params) for i in 1:1000]
 derivative = mean(samples) #d𝔼[state]/dparams
 
-#direct call to measure function
+#direct call to measure() function gives the overlap of the initial state with the projected state and the gradient of the parameters
 overlap, dEst_dp = measure(x)
 overlap, dEst_dp = measure(x, rand(length(basis)), 400)
 ```
